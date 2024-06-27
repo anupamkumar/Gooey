@@ -11,5 +11,5 @@ else:  # POSIX
   def taskkill(pid):
     parent = psutil.Process(pid)
     for child in parent.children(recursive=True):
-      child.kill()
-    parent.kill()
+      child.terminate()
+    parent.terminate()
